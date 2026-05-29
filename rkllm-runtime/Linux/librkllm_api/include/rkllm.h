@@ -1,5 +1,6 @@
 #ifndef _RKLLM_H_
 #define _RKLLM_H_
+#include <stddef.h>
 #include <cstdint>
 
 #ifdef __cplusplus
