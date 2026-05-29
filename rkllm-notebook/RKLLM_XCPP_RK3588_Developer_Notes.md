@@ -312,6 +312,7 @@ Implemented without:
 -   Milvus
 
 Architecture:
+![arch](res/rkllm-ss-rag.png)
 
 ``` plantuml
 @startuml
