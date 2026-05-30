@@ -311,7 +311,7 @@ Implemented without:
 -   Elasticsearch
 -   Milvus
 
-Architecture:
+Architecture:  
 ![arch](res/rkllm-ss-rag.png)
 
 ``` plantuml
