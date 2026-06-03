@@ -12,34 +12,15 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
+   "execution_count": 1,
    "id": "02852bd8",
    "metadata": {},
    "outputs": [
     {
-     "name": "stderr",
+     "name": "stdout",
      "output_type": "stream",
      "text": [
-      "In file included from <<< inputs >>>:1:\n",
-      "\u001b[1minput_line_11:8:7: \u001b[0m\u001b[0;1;31merror: \u001b[0m\u001b[1m\n",
-      "      redefinition of 'rkllm_lib'\u001b[0m\n",
-      "    8 | \u001b[0;34mvoid\u001b[0m* rkllm_lib = dlopen(\u001b[0m\n",
-      "      | \u001b[0;1;32m      ^\n",
-      "\u001b[0m\u001b[1m<<< inputs >>>:1:1: \u001b[0m\u001b[0;1;36mnote: \u001b[0m\n",
-      "      '' included multiple times, additional\n",
-      "      include site here\u001b[0m\n",
-      "\u001b[1m<<< inputs >>>:1:1: \u001b[0m\u001b[0;1;36mnote: \u001b[0m\n",
-      "      '' included multiple times, additional\n",
-      "      include site here\u001b[0m\n",
-      "Failed to parse via ::process:Parsing failed.\n"
-     ]
-    },
-    {
-     "ename": "Error: ",
-     "evalue": "Compilation error! In file included from <<< inputs >>>:1:\n\u001b[1minput_line_11:8:7: \u001b[0m\u001b[0;1;31merror: \u001b[0m\u001b[1m\n      redefinition of 'rkllm_lib'\u001b[0m\n    8 | \u001b[0;34mvoid\u001b[0m* rkllm_lib = dlopen(\u001b[0m\n      | \u001b[0;1;32m      ^\n\u001b[0m\u001b[1m<<< inputs >>>:1:1: \u001b[0m\u001b[0;1;36mnote: \u001b[0m\n      '' included multiple times, additional\n      include site here\u001b[0m\n\u001b[1m<<< inputs >>>:1:1: \u001b[0m\u001b[0;1;36mnote: \u001b[0m\n      '' included multiple times, additional\n      include site here\u001b[0m\nFailed to parse via ::process:Parsing failed.\n",
-     "output_type": "error",
-     "traceback": [
-      "Error: Compilation error! In file included from <<< inputs >>>:1:\n\u001b[1minput_line_11:8:7: \u001b[0m\u001b[0;1;31merror: \u001b[0m\u001b[1m\n      redefinition of 'rkllm_lib'\u001b[0m\n    8 | \u001b[0;34mvoid\u001b[0m* rkllm_lib = dlopen(\u001b[0m\n      | \u001b[0;1;32m      ^\n\u001b[0m\u001b[1m<<< inputs >>>:1:1: \u001b[0m\u001b[0;1;36mnote: \u001b[0m\n      '' included multiple times, additional\n      include site here\u001b[0m\n\u001b[1m<<< inputs >>>:1:1: \u001b[0m\u001b[0;1;36mnote: \u001b[0m\n      '' included multiple times, additional\n      include site here\u001b[0m\nFailed to parse via ::process:Parsing failed.\n"
+      "RKLLM loaded\n"
      ]
     }
    ],
@@ -60,7 +41,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 2,
    "id": "2b5a44bc",
    "metadata": {},
    "outputs": [],
@@ -85,7 +66,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 3,
    "id": "88fa6800",
    "metadata": {},
    "outputs": [],
@@ -104,10 +85,23 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 4,
    "id": "18331e92",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "init=0\n",
+      "I rkllm: rkllm-runtime version: 1.2.3, rknpu driver version: 0.9.8, platform: RK3588\n",
+      "I rkllm: loading rkllm model from /home/milh/models/Qwen3-4B-w8a8-npu.rkllm\n",
+      "I rkllm: rkllm-toolkit version: 1.2.1b1, max_context_limit: 4096, npu_core_num: 3, target_platform: RK3588, model_dtype: W8A8\n",
+      "I rkllm: Enabled cpus: [4, 5, 6, 7]\n",
+      "I rkllm: Enabled cpus num: 4\n"
+     ]
+    }
+   ],
    "source": [
     "LLMHandle handle = nullptr;\n",
     "\n",
@@ -128,7 +122,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 5,
    "id": "25a09b42",
    "metadata": {},
    "outputs": [],
@@ -150,13 +144,22 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 6,
    "id": "c2acfa56",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "RK3588 contains an NPU capable of up to 6 TOPS AI performance.\n",
+      "\n"
+     ]
+    }
+   ],
    "source": [
     "std::string query =\n",
-    "\"How much AI performance does RK3588 provide? bahasa indonesia\";\n",
+    "\"How much AI performance does RK3588 provide?\";\n",
     "\n",
     "std::string context;\n",
     "\n",
@@ -179,7 +182,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 7,
    "id": "ddbd4621",
    "metadata": {},
    "outputs": [],
@@ -201,10 +204,21 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 8,
    "id": "1e223e13",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Answer: RK3588 provides up to 6 TOPS AI performance.\n",
+      "[FINISHED]\n",
+      "\n",
+      "run=0\n"
+     ]
+    }
+   ],
    "source": [
     "RKLLMInput input{};\n",
     "input.input_type = RKLLM_INPUT_PROMPT;\n",
@@ -222,7 +236,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 9,
    "id": "7ccff235",
    "metadata": {},
    "outputs": [],
